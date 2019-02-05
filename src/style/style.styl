@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900')
+
+body
+    margin 0
+    position relative
+    #root
+        .App
+            overflow hidden
+            .wrapper
+                width 100%
+                height 100%
+                .sidebar
+                    height 100%
+                    width 200px
+                    border 3px solid black
+                    box-sizing: border-box
+                    position: fixed
+                    .setting-block
+                        .title
+                            display flex
+                            justify-content space-between
+                            padding: 10px
+                            font-family: 'Roboto'
+                            color: white
+                            font-size: 20px
+                            background-color: lightgrey
+                            cursor pointer
+                            user-select: none
+                            border-bottom: 1px solid black
+                        .pointer
+                            user-select: none
+                            transition: transform 0.5s
+                    .setting-wrapper
+                        transition: height 1s
+                main
+                    height 100vh
+                    margin-left: 200px
+                    header
+                        position fixed
+                        width: 100%
+                        height 50px
+                        background-color: lightgreen
+                        border-bottom: 4px solid green
+                        box-sizing: border-box 
+                        p
+                            margin: 15px
+                            font-family: 'Roboto'
+                            color: white
+                            font-weight: 800
+                            font-style: normal
+                            font-stretch: normal
+                            letter-spacing: normal
+                            text-align: left
+                            user-select: none
+                    .placeHome
+                        height: calc(100% - 50px)
+                        padding-top: 50px
+                        display: flex
+                        flex-direction: column
+                        align-items: center
+                        justify-content: center
+                        flex-wrap: nowrap
+                        .roof
+                            width: 0;
+                            height: 0;
+                            border-left: 100px solid transparent;
+                            border-right: 100px solid transparent;
+                            border-bottom: 200px solid;
+                        .wall
+                            width: 170px
+                            height: 150px
+                        .foundation
+                            width: 190px
+                            height: 20px
+                        
