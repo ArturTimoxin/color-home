@@ -30,8 +30,22 @@ body
                         .pointer
                             user-select: none
                             transition: transform 0.5s
-                    .setting-wrapper
-                        transition: height 1s
+                    .settings-wrapper-close
+                        max-height: 0;
+                        transition: max-height 0.1s ease-out
+                        overflow: hidden;
+                        background-color: lightblue
+                    .settings-wrapper-open
+                            max-height: 500px;
+                            transition: max-height 0.25s ease-in
+                            background-color: lightblue
+                        label 
+                            display: block
+                            padding: 5px
+                            font-family: 'Roboto'
+                            color: white
+                            font-size: 20px
+
                 main
                     height 100vh
                     margin-left: 200px

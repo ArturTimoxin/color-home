@@ -8,38 +8,38 @@ class App extends Component {
         title: "Roof color",
         show: false,
         options: [
-          { name: "colorRoof", isChecked: "", value: "green" },
-          { name: "colorRoof", isChecked: "checked", value: "red" },
-          { name: "colorRoof", isChecked: "", value: "blue" },
+          { name: "colorRoof", isChecked: "", value: "Green" },
+          { name: "colorRoof", isChecked: "checked", value: "Red" },
+          { name: "colorRoof", isChecked: "", value: "Blue" },
         ],
       },
       {
         title: "Wall color",
         show: false,
         options: [
-          { name: "colorWall", isChecked: "", value: "green" },
-          { name: "colorWall", isChecked: "checked", value: "red" },
-          { name: "colorWall", isChecked: "", value: "blue" },
+          { name: "colorWall", isChecked: "checked", value: "Green" },
+          { name: "colorWall", isChecked: "", value: "Red" },
+          { name: "colorWall", isChecked: "", value: "Blue" },
         ],
       },
       {
         title: "Foundation color",
         show: false,
         options: [
-          { name: "colorFoundation", isChecked: "", value: "green" },
-          { name: "colorFoundation", isChecked: "", value: "red" },
-          { name: "colorFoundation", isChecked: "clecked", value: "blue" },
+          { name: "colorFoundation", isChecked: "", value: "Green" },
+          { name: "colorFoundation", isChecked: "", value: "Red" },
+          { name: "colorFoundation", isChecked: "clecked", value: "Blue" },
         ],
       },
     ],
-    colorRoof: "yellow",
+    colorRoof: "red",
     colorWall: "green",
     colorFoundation: "blue",
   };
 
   showSetting = e => {
     let newSettings = this.state.settings;
-    if (newSettings[e.target.id].show === true) {
+    if (newSettings[e.target.id].show) {
       newSettings.forEach(elem => {
         elem.show = false;
       });
@@ -64,14 +64,15 @@ class App extends Component {
               <div className="setting-block" key={index}>
                 <div className="title" id={index} onClick={this.showSetting}>
                   {elem.title}
-                  <div className="pointer" style={{ transform: elem.show ? "rotate(180deg)" : "rotate(0deg)" }}>
+                  <div
+                    className="pointer"
+                    id={index}
+                    style={{ transform: elem.show ? "rotate(180deg)" : "rotate(0deg)" }}
+                  >
                     ↓
                   </div>
                 </div>
-                <div
-                  className="settings-wrapper"
-                  style={{ height: elem.show ? "auto" : 0, opacity: elem.show ? 1 : 0 }}
-                >
+                <div className={elem.show ? "settings-wrapper-open" : "settings-wrapper-close"}>
                   {elem.options.map((elem, index) => (
                     <label key={index}>
                       <input

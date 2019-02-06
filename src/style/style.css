@@ -33,8 +33,23 @@ body #root .App .wrapper .sidebar .setting-block .pointer {
   user-select: none;
   transition: transform 0.5s;
 }
-body #root .App .wrapper .sidebar .setting-wrapper {
-  transition: height 1s;
+body #root .App .wrapper .sidebar .settings-wrapper-close {
+  max-height: 0;
+  transition: max-height 0.1s ease-out;
+  overflow: hidden;
+  background-color: #add8e6;
+}
+body #root .App .wrapper .sidebar .settings-wrapper-open {
+  max-height: 500px;
+  transition: max-height 0.25s ease-in;
+  background-color: #add8e6;
+}
+body #root .App .wrapper .sidebar label {
+  display: block;
+  padding: 5px;
+  font-family: 'Roboto';
+  color: #fff;
+  font-size: 20px;
 }
 body #root .App .wrapper main {
   height: 100vh;
