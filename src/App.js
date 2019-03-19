@@ -5,7 +5,7 @@ class App extends Component {
   state = {
     settings: [
       {
-        title: "Roof color",
+        title: "Roof",
         show: false,
         options: [
           { name: "colorRoof", isChecked: "", value: "Green" },
@@ -14,7 +14,7 @@ class App extends Component {
         ],
       },
       {
-        title: "Wall color",
+        title: "Wall",
         show: false,
         options: [
           { name: "colorWall", isChecked: "checked", value: "Green" },
@@ -23,7 +23,7 @@ class App extends Component {
         ],
       },
       {
-        title: "Foundation color",
+        title: "Foundation",
         show: false,
         options: [
           { name: "colorFoundation", isChecked: "", value: "Green" },
@@ -46,7 +46,7 @@ class App extends Component {
     } else {
       newSettings.forEach((elem, index) => {
         index === Number(e.target.id) ? (elem.show = true) : (elem.show = false);
-      });
+      }); 
     }
     this.setState({ settings: newSettings });
   };
